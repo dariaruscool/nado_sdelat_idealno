@@ -22,6 +22,7 @@ body {
     object-fit: cover;
     object-position: center;
     position: absolute;
+    inset: 0;
 }
 
 .text_tittle {
@@ -31,26 +32,27 @@ body {
     line-height: 136.18px;
     letter-spacing: 0.035em;
     text-transform: uppercase;
-    color: rgba(76, 76, 76, 1);
+    color: rgba(0, 0, 0, 1);
     flex-direction: column;
     max-width: 739px;
     text-align: center;
     margin: 0 auto;
     padding-top: 60px;
     z-index: 1;
+    position: static;
 }
 
-h1::after {
+.text_tittle::after {
     content: "*";
-    /* color: rgba(76, 76, 76, 1); */
+    position: relative;
 }
 
-body ::before {
+body::before {
     content: '';
     position: absolute;
     inset: 0;
     background-color: rgb(255 255  255 / 0.3);
-    z-index: 0;
+    z-index: 1;
 }
 
 .text_tittle:hover::before {
@@ -65,13 +67,17 @@ body ::before {
     text-transform: none;
     white-space: pre;
     max-width: 746px;
-    max-height: 142px;
     border: 2px solid rgba(0, 0, 0, 1);
     padding: 36px 44px;
     background-color: white;
     border-radius: 20px;
-    box-shadow: 0 16px 0 black;
-    margin-top: 180px;
-    margin-left: auto;
-    margin-right: 20px;
+    box-shadow: 0 12px 0 black;
+    top: 180px;
+    right: 20px;
+    position: absolute;
+}
+
+.text_tittle:hover {
+    color: #4c4c4c;
+    cursor: default;
 }
